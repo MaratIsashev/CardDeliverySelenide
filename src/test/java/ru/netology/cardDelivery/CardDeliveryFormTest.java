@@ -20,7 +20,7 @@ public class CardDeliveryFormTest {
         Date currentDate = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(currentDate);
-        calendar.add(Calendar.DATE, 4);
+        calendar.add(Calendar.DATE, 1);
         Date deliveryDate = calendar.getTime();
         
         Configuration.holdBrowserOpen = true;
