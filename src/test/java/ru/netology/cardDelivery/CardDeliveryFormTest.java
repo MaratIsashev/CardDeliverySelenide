@@ -18,7 +18,7 @@ public class CardDeliveryFormTest {
         open("http://localhost:9999/");
         $("span[data-test-id=city] input").setValue("Новосибирск");
         //$("span[data-test-id=date] input").clear();
-        //$("span[data-test-id=date] input").setValue("");
+        $("span[data-test-id=date] input").setValue("орп");
         $("span[data-test-id=name] input").setValue("Исашев Марат");
         $("span[data-test-id=phone] input").setValue("+79137940954");
         $("label[data-test-id=agreement]").click();
