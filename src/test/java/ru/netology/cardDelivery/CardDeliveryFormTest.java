@@ -27,6 +27,9 @@ public class CardDeliveryFormTest {
         open("http://localhost:9999/");
         $("span[data-test-id=city] input").setValue("Новосибирск");
         //$("span[data-test-id=date] input").clear();
+        //$("span[data-test-id=date] input").setValue("1");
+        //Selenide.actions("span[data-test-id=date] input").keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE);
+        //$("span[data-test-id=date] input").setValue("1");
         $("span[data-test-id=date] input").setValue(String.valueOf(deliveryDate));
         $("span[data-test-id=name] input").setValue("Исашев Марат");
         $("span[data-test-id=phone] input").setValue("+79137940954");
