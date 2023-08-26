@@ -1,4 +1,4 @@
-package ru.netology.cardDelivery;
+package ru.netology.carddelivery;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -32,8 +31,11 @@ public class CardDeliveryFormTest {
         $("span[data-test-id=name] input").setValue("Исашев Марат");
         $("span[data-test-id=phone] input").setValue("+79137940954");
         $("label[data-test-id=agreement]").click();
-        $(withText("button.button")).click();
-        $(withText("Успешно!")).should(Condition.appear, Duration.ofSeconds(15));
+        $("button.button").click();
+        //$(withText("Успешно!")).should(Condition.appear, Duration.ofSeconds(15));
+        $(".notification__content")
+                .shouldHave(Condition.text("Встреча успешно забронирована на " + currentDate), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);
 
     }
 
